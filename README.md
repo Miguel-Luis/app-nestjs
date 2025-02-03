@@ -122,6 +122,7 @@ En esta guía se mostraran todos los pasos necesarios para instalar **NVM** en W
     - [Pasos para Instalar NestJS CLI Globalmente:](#pasos-para-instalar-nestjs-cli-globalmente)
   - [4. Creación de tu Primer Proyecto en NestJS](#4-creación-de-tu-primer-proyecto-en-nestjs)
     - [Pasos para Crear un Nuevo Proyecto:](#pasos-para-crear-un-nuevo-proyecto)
+  - [5. Explicación de la Carpeta `src` y sus Archivos](#5-explicación-de-la-carpeta-src-y-sus-archivos)
   - [Recursos Adicionales](#recursos-adicionales)
 
 ---
@@ -135,11 +136,8 @@ En esta guía se mostraran todos los pasos necesarios para instalar **NVM** en W
 1. **Descargar el Instalador:**
    - Visita el repositorio de [nvm-windows](https://github.com/coreybutler/nvm-windows/releases) y descarga el instalador (`nvm-setup.exe`) de la última versión.
 
-   ![Descargar NVM](https://user-images.githubusercontent.com/your-image-placeholder.png)
-
 2. **Ejecutar el Instalador:**
    - Ejecuta el archivo descargado y sigue las instrucciones en pantalla.
-   - Acepta los términos y condiciones y elige la ruta de instalación (puedes dejar la predeterminada).
 
 3. **Verificar la Instalación:**
    - Abre **PowerShell** o **Símbolo del sistema** y ejecuta:
@@ -154,29 +152,17 @@ En esta guía se mostraran todos los pasos necesarios para instalar **NVM** en W
 
 ### Pasos para Instalar Node.js:
 1. **Listar las Versiones Disponibles (Opcional):**
-   - Para ver las versiones disponibles de Node.js, ejecuta:
-     ```bash
-     nvm list available
-     ```
-   - Esto te mostrará una lista de las versiones que puedes instalar.
-
+   ```bash
+   nvm list available
+   ```
 2. **Instalar la Última Versión de Node.js:**
-   - Normalmente, la última versión estable se encuentra en la parte superior de la lista. Puedes instalarla con:
-     ```bash
-     nvm install latest
-     ```
-   - **Nota:** En algunas versiones de nvm-windows, puede que necesites especificar el número de versión. Consulta la [documentación oficial](https://github.com/coreybutler/nvm-windows) si encuentras problemas.
-
+   ```bash
+   nvm install latest
+   ```
 3. **Seleccionar la Versión de Node.js a Usar:**
-   - Una vez instalada, selecciona la versión instalada:
-     ```bash
-     nvm use latest
-     ```
-   - Verifica la versión actual de Node.js:
-     ```bash
-     node -v
-     ```
-   - ¡Listo! Ahora tienes la última versión de Node.js instalada.
+   ```bash
+   nvm use latest
+   ```
 
 ---
 
@@ -187,17 +173,13 @@ El **NestJS CLI** es una herramienta de línea de comandos que facilita la creac
 
 ### Pasos para Instalar NestJS CLI Globalmente:
 1. **Instalar NestJS CLI:**
-   - Ejecuta el siguiente comando en tu terminal:
-     ```bash
-     npm install -g @nestjs/cli
-     ```
-
+   ```bash
+   npm install -g @nestjs/cli
+   ```
 2. **Verificar la Instalación:**
-   - Comprueba que la instalación fue exitosa ejecutando:
-     ```bash
-     nest --version
-     ```
-   - Deberías ver la versión del CLI de NestJS.
+   ```bash
+   nest --version
+   ```
 
 ---
 
@@ -205,26 +187,31 @@ El **NestJS CLI** es una herramienta de línea de comandos que facilita la creac
 
 ### Pasos para Crear un Nuevo Proyecto:
 1. **Crear el Proyecto:**
-   - Usa el CLI de NestJS para generar un nuevo proyecto. Reemplaza `mi-proyecto` por el nombre que prefieras:
-     ```bash
-     nest new mi-proyecto
-     ```
-   - El CLI te preguntará qué gestor de paquetes deseas utilizar (npm, yarn, etc.). Selecciona npm.
-
+   ```bash
+   nest new mi-proyecto
+   ```
 2. **Navegar al Directorio del Proyecto:**
-   - Una vez creado, entra en el directorio del proyecto:
-     ```bash
-     cd mi-proyecto
-     ```
-
+   ```bash
+   cd mi-proyecto
+   ```
 3. **Ejecutar el Proyecto:**
-   - Inicia el servidor de desarrollo:
-     ```bash
-     npm run start:dev
-     ```
-   - Abre tu navegador y visita [http://localhost:3000](http://localhost:3000) para ver tu aplicación NestJS en acción.
+   ```bash
+   npm run start:dev
+   ```
 
-   ![NestJS Running](https://user-images.githubusercontent.com/your-image-placeholder.png)
+---
+
+## 5. Explicación de la Carpeta `src` y sus Archivos
+
+La carpeta `src` es el corazón de un proyecto NestJS. Contiene los archivos principales que definen la estructura y funcionalidad de la aplicación. Dentro de esta carpeta encontramos:
+
+- **`main.ts`**: Punto de entrada de la aplicación, donde se inicia el servidor de NestJS y se configuran las opciones globales.
+- **`app.module.ts`**: Módulo principal de la aplicación donde se importan y organizan los diferentes componentes de NestJS.
+- **`app.controller.ts`**: Define los controladores, que manejan las solicitudes HTTP y responden a ellas.
+- **`app.service.ts`**: Contiene la lógica de negocio de la aplicación y es utilizado por los controladores.
+- **`app.controller.spec.ts`**: Archivo de pruebas unitarias para el controlador.
+
+Esta estructura modular de NestJS permite organizar el código de manera limpia y escalable, facilitando la implementación de nuevas funcionalidades en la aplicación.
 
 ---
 
@@ -234,5 +221,3 @@ El **NestJS CLI** es una herramienta de línea de comandos que facilita la creac
 - **Documentación de Node.js:** [Node.js Official](https://nodejs.org/)
 - **Documentación de NestJS:** [NestJS Official](https://docs.nestjs.com/)
 - **Comunidad y Soporte:** Únete a [NestJS Discord](https://discord.gg/nestjs) para interactuar con otros desarrolladores.
-
----
