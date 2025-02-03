@@ -9,29 +9,29 @@ export class TasksService {
 
     createTask() {
         return {
-            'success': true,
-            'message': 'Task created successfully',
+            success: true,
+            message: 'Task created successfully',
         }
     }
 
     updateTask() {
         return {
-            'success': true,
-            'message': 'Task updated successfully',
+            success: true,
+            message: 'Task updated successfully',
         }
     }
 
     deleteTask() {
         return {
-            'success': true,
-            'message': 'Task deleted successfully',
+            success: true,
+            message: 'Task deleted successfully',
         }
     }
 
     updateTaskStatus() {
         return {
-            'success': true,
-            'message': 'Task status update successfully',
+            success: true,
+            message: 'Task status update successfully',
         }
     }
 
